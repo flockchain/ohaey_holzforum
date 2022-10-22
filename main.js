@@ -43,23 +43,12 @@ const pic1 = new THREE.Mesh(
   new THREE.MeshBasicMaterial( { map: pic1Texture } )
 );
 pic1.position.set(18, 7, -20);
-
 const pic2Texture = new THREE.TextureLoader().load('pic23.jpg');
-const pic3Texture = new THREE.TextureLoader().load('pic65.jgp');
-const pic4Texture = new THREE.TextureLoader().load('pic65.jgp');
-
 const pic2 = new THREE.Mesh(
   new THREE.BoxGeometry(7, 7, 7),
   new THREE.MeshBasicMaterial( { map: pic2Texture } )
 );
 pic2.position.set(12, -6, 4);
-
-const pic3 = new THREE.Mesh(
-  new THREE.BoxGeometry(7, 7, 7),
-  new THREE.MeshBasicMaterial( { map: pic3Texture } )
-);
-pic3.position.set(-10, 0, 30);
-
 
 //Animation
 function animate()
