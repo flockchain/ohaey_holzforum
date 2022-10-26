@@ -29,6 +29,87 @@ main {
   grid-template-columns: repeat(12, 1fr);
 }
 
+.slider
+{
+  display: grid;
+  grid-column: 1 / 13;
+  height: 250px;
+  margin: auto;
+  top: -70%;
+  position: relative;
+  width: 100%;
+  place-items: center;
+  overflow: hidden;
+}
+
+.sliderTrack
+{
+  display: flex;
+  width: calc(250px * 20);
+  animation: scroll 80s linear infinite;
+}
+
+@keyframes scroll{
+  0% {
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(calc(-250px * 20));
+  }
+}
+
+.sliderTrack:hover{
+  animation-play-state: paused;
+}
+
+.slide
+{
+  height: 200px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  perspective: 100px;
+}
+
+img
+{
+  width: 100%;
+  transition: all 1s ease-out;
+  transition-property: all;
+}
+
+img:hover{
+  width: 140%;
+  height: 140%;
+  z-index: 999;
+  position: relative;
+}
+
+.slider::before,
+.slider::after
+{
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 15%;
+  z-index: 2;
+}
+
+.slider::before
+{
+  left: 0;
+  top: 0;
+}
+
+.slider::after
+{
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
 h1, h2, h3, blockquote {
   font-family: elevon, sans-serif;
   font-weight: 700;
